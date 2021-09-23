@@ -4,12 +4,19 @@ import "./app.scss";
 import HeroImg from "../../assets/lost.svg";
 
 function App() {
+  function time(type: string) {
+    const today = new Date();
+    console.log(today.getHours());
+  }
+
+  time("");
+
   return (
     <div className='app'>
       <div className='app__flex'>
         <div className='app__flex-container-container'>
           <div className='app__input-container'>
-            <h1>Find a Room to “Eat”</h1>
+            <h1>Find a Room</h1>
             <div className='app__roomdisplay'>
               <RoomDisplay />
               <RoomDisplay />

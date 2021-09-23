@@ -6,21 +6,24 @@ import HeroImg from "../../assets/lost.svg";
 function App() {
   return (
     <div className='app'>
-      <div className='app__flex-container-container'>
-        <div className='app__input-container'>
-          <h1>Find a Room to “Eat”</h1>
-          <div className='app__roomdisplay'>
-            <RoomDisplay />
-            <RoomDisplay />
-            <RoomDisplay />
+      <div className='app__flex'>
+        <div className='app__flex-container-container'>
+          <div className='app__input-container'>
+            <h1>Find a Room to “Eat”</h1>
+            <div className='app__roomdisplay'>
+              <RoomDisplay />
+              <RoomDisplay />
+              <RoomDisplay />
+            </div>
+            <Button />
           </div>
-          <Button />
+        </div>
+
+        <div className='app__svg'>
+          <img src={HeroImg} alt='main_img' className='app__svg-img' />
         </div>
       </div>
-
-      <div className='app__svg'>
-        <img src={HeroImg} alt='main_img' className='app__svg-img' />
-      </div>
+      <p className='app__footer'>Made with ❤️ by Georg</p>
     </div>
   );
 }

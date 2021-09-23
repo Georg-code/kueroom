@@ -7,12 +7,17 @@ import monday from "../../assets/dates/1.json";
 
 function App() {
   function time(type: string) {
-    const today = new Date();
-    const day = today.getDay;
-    for (let i = 0; i < Object.keys(monday).length; i++) {
-      console.log(Object.keys(monday)[i]);
-      var d = new Date(Object.keys(monday)[i]);
-      console.log(d);
+    const now = new Date();
+    console.log(now.getHours());
+
+    for (let i = Object.keys(monday).length - 1; i > 0; i--) {
+      let time: any = Object.keys(monday)[i].split(":");
+      // eslint-disable-next-line eqeqeq
+      if (time[0] == now.getHours()) {
+        break;
+      } else {
+        console.log("No time to die");
+      }
     }
   }
 

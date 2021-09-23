@@ -1,9 +1,9 @@
 import React from "react";
-
+import "./room-display.scss";
 function RoomDisplay() {
   return (
-    <div className='RoomDisplay'>
-      <p>Hallo</p>
+    <div className='roomdisplay'>
+      <p>B112</p>
     </div>
   );
 }

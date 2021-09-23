@@ -1,9 +1,10 @@
 import React from "react";
+import "./button.scss";
 
 function Button() {
   return (
-    <div className='Button'>
-      <p>Hallo</p>
+    <div className='button'>
+      <p>Search free room</p>
     </div>
   );
 }

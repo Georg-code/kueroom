@@ -1,0 +1,29 @@
+.button {
+  position: absolute;
+  margin-top: 5vh;
+  background-color: #6c63ff;
+  width: 60%;
+  padding: 20px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  vertical-align: middle;
+  border-radius: 10px;
+  line-height: font-size;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  bottom: 10vh;
+  left: 0;
+  right: 0;
+}
+
+.button > p {
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  transition: 0.3s;
+}

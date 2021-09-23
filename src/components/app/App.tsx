@@ -9,7 +9,12 @@ function App() {
       <div className='app__flex-container'>
         <div className='app__input-container'>
           <h1>Find a Room to “Eat”</h1>
-          <RoomDisplay />
+          <div className='app__roomdisplay'>
+            <RoomDisplay />
+            <RoomDisplay />
+            <RoomDisplay />
+          </div>
+
           <Button />
         </div>
         <div className='app__svg'>

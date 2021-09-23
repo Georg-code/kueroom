@@ -6,7 +6,7 @@ import "./app.scss";
 function App() {
   return (
     <div className='app'>
-      <div className='app__flex-container'>
+      <div className='app__flex-container-container'>
         <div className='app__input-container'>
           <h1>Find a Room to “Eat”</h1>
           <div className='app__roomdisplay'>
@@ -17,9 +17,10 @@ function App() {
 
           <Button />
         </div>
-        <div className='app__svg'>
-          <svg></svg>
-        </div>
+      </div>
+
+      <div className='app__svg'>
+        <svg></svg>
       </div>
     </div>
   );

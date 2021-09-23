@@ -3,10 +3,17 @@ import RoomDisplay from "../room-display/room-display";
 import "./app.scss";
 import HeroImg from "../../assets/lost.svg";
 
+import monday from "../../assets/dates/1.json";
+
 function App() {
   function time(type: string) {
     const today = new Date();
-    console.log(today.getHours());
+    const day = today.getDay;
+    for (let i = 0; i < Object.keys(monday).length; i++) {
+      console.log(Object.keys(monday)[i]);
+      var d = new Date(Object.keys(monday)[i]);
+      console.log(d);
+    }
   }
 
   time("");

@@ -21,24 +21,24 @@
     background-position: left;
     content: "";
     position: absolute;
-    right: 0;
+    left: 0;
     width: 250px;
     height: 250px;
     z-index: -1;
     overflow: show;
     background-size: cover;
-    transform: translateX(-70%) translateY(30%);
+    transform: translateX(-30%) translateY(60%);
   }
 
   &__input-container {
     text-align: center;
     width: 25vw;
-    height: 45vh;
+    height: 350px;
     background-color: white;
     border-radius: 8px;
     padding: 10px;
     margin-left: 8vw;
-    margin-top: 15vh;
+    margin-top: 25vh;
     box-shadow: -1px 9px 36px 5px rgba(0, 0, 0, 0.1);
     position: relative;
   }
@@ -54,7 +54,7 @@
     margin-top: 25px;
     position: absolute;
     width: 100%;
-    bottom: 19vh;
+    bottom: 150px;
   }
 
   &__svg {
@@ -63,7 +63,7 @@
   }
 
   &__svg-img {
-    margin-top: 14vh;
+    margin-top: 15vh;
     width: 50vw;
     height: 50vh;
     display: block;

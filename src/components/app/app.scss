@@ -1,0 +1,13 @@
+.app {
+  &__input-container {
+    text-align: center;
+    width: 30vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 8vw;
+    margin-top: 4vh;
+    box-shadow: -1px 9px 36px 5px rgba(0, 0, 0, 0.3);
+  }
+}

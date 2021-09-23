@@ -1,4 +1,5 @@
 .app {
+  display: flex;
   &__input-container::before {
     background-image: url("../../assets/dots.svg");
     background-position: right;
@@ -10,8 +11,23 @@
     z-index: -1;
     overflow: show;
     background-size: cover;
-    transform: translateX(50%);
+    transform: translateX(30%) translateY(-25%);
   }
+
+  &__input-container::after {
+    background-image: url("../../assets/dots.svg");
+    background-position: left;
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    z-index: -1;
+    overflow: show;
+    background-size: cover;
+    transform: translateX(-70%) translateY(30%);
+  }
+
   &__input-container {
     text-align: center;
     width: 25vw;
@@ -37,5 +53,11 @@
     position: absolute;
     width: 100%;
     bottom: 19vh;
+  }
+
+  &__svg-img {
+    margin-top: 14vh;
+    width: 50vw;
+    height: 50vh;
   }
 }

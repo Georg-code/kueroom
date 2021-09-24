@@ -40,8 +40,11 @@ function App() {
   }
 
   function lol() {
-    console.log(time() as string[]);
-    setRooms(time() as string[]);
+    if (time() !== undefined) {
+      setRooms(time() as string[]);
+    } else {
+      setRooms(["No", "Rooms", "Free"]);
+    }
   }
 
   return (

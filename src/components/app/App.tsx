@@ -4,9 +4,12 @@ import "./app.scss";
 import HeroImg from "../../assets/lost.svg";
 
 import monday from "../../assets/dates/1.json";
+import { strict } from "assert";
+import { Key } from "react";
 
 function App() {
   function time(type: string) {
+    let classStart: keyof typeof monday;
     const now = new Date();
     console.log(now.getHours());
 
@@ -14,9 +17,17 @@ function App() {
       let time: any = Object.keys(monday)[i].split(":");
       // eslint-disable-next-line eqeqeq
       if (time[0] == now.getHours()) {
-        break;
-      } else {
-        console.log("No time to die");
+        if (time[1] <= now.getMinutes()) {
+          console.log(Object);
+          console.log(Object.keys(monday)[i]);
+          classStart = "11:10"
+          console.log(classStart);
+        } else {
+          //classStart = Object.keys(monday)[i - 1];
+          console.log(Object.keys(monday)[i - 1]);
+        }
+
+        // console.log(monday[classStart]);
       }
     }
   }

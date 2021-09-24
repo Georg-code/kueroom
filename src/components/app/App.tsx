@@ -3,29 +3,46 @@ import RoomDisplay from "../room-display/room-display";
 import "./app.scss";
 import HeroImg from "../../assets/lost.svg";
 
-import monday from "../../assets/dates/1.json";
+import dayInput from "../../assets/dates/1.json";
+import { useState } from "react";
 
 function App() {
+  const [rooms, setRooms] = useState(["Klick", "To", "Load"]);
+
   function time() {
-    type Rooms = keyof typeof monday;
-    let classStart: Rooms;
-    const now = new Date();
-    for (let i = Object.keys(monday).length - 1; i > 0; i--) {
-      let time: any = Object.keys(monday)[i].split(":");
-      // eslint-disable-next-line eqeqeq
+    const day = dayInput as Record<string, string[]>;
+
+    let now = new Date();
+
+    function HHMMtoInt(x: string) {
+      const [HH, MM] = x.split(":");
+      return parseInt(HH) * 100 + parseInt(MM);
+    }
+    const times = Object.keys(day).sort((a, b) => HHMMtoInt(a) - HHMMtoInt(b));
+
+    for (let i = 0; i < times.length; i++) {
+      const timeHHMM = times[i];
+      let time = timeHHMM.split(":").map((x) => parseInt(x));
+
+      let timeInterval: number | undefined;
       if (time[0] == now.getHours()) {
         if (time[1] <= now.getMinutes()) {
-          classStart = Object.keys(monday)[i] as Rooms;
-          console.log(Object.keys(monday)[i]);
+          timeInterval = i;
         } else {
-          classStart = Object.keys(monday)[i - 1] as Rooms;
-          console.log(Object.keys(monday)[i - 1]);
+          timeInterval = i - 1;
         }
-        console.log(monday[classStart]);
+      }
+
+      if (timeInterval !== undefined && timeInterval >= 0) {
+        return day[times[timeInterval]];
       }
     }
   }
-  time();
+
+  function lol() {
+    console.log(time() as string[]);
+    setRooms(time() as string[]);
+  }
 
   return (
     <div className='app'>
@@ -34,11 +51,11 @@ function App() {
           <div className='app__input-container'>
             <h1>Find a Room</h1>
             <div className='app__roomdisplay'>
-              <RoomDisplay />
-              <RoomDisplay />
-              <RoomDisplay />
+              {rooms.map((room) => (
+                <RoomDisplay name={room} />
+              ))}
             </div>
-            <Button />
+            <Button OnClick={lol} />
           </div>
         </div>
 
@@ -46,7 +63,9 @@ function App() {
           <img src={HeroImg} alt='main_img' className='app__svg-img' />
         </div>
       </div>
-      <p className='app__footer'>Made with ❤️ by Georg</p>
+      <p className='app__footer'>
+        Made with ❤️ by <a href='https://github.com/Georg-code'>Georg</a>
+      </p>
     </div>
   );
 }

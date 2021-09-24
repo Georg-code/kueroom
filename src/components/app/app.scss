@@ -1,4 +1,8 @@
 .app {
+  a {
+    color: black;
+  }
+
   &__flex {
     display: flex;
   }
@@ -77,5 +81,65 @@
     left: 35%;
     position: absolute;
     bottom: 12px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    &__svg {
+      display: none;
+    }
+
+    &__input-container {
+      width: 70vw;
+      margin-right: 15vw;
+      margin-left: 15vw;
+      position: relative;
+    }
+
+    &__flex {
+      display: block;
+    }
+
+    &__input-container::before {
+      display: none;
+    }
+
+    &__input-container::after {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    &__svg {
+      display: none;
+    }
+
+    &__input-container {
+      padding: 0;
+      padding-top: 10px;
+      margin-top: 8vh;
+      width: 80vw;
+      margin-right: 10vw;
+      margin-left: 10vw;
+    }
+
+    &__flex {
+      display: block;
+    }
+
+    &__input-container::before {
+      display: none;
+    }
+
+    &__input-container::after {
+      display: none;
+    }
+
+    &__footer {
+      text-align: center;
+      width: 50%;
+      left: 25%;
+      position: absolute;
+      bottom: 12px;
+    }
   }
 }

@@ -1,9 +1,14 @@
 import React from "react";
 import "./room-display.scss";
-function RoomDisplay() {
+
+export interface RoomDisplayprops {
+  name: string;
+}
+
+function RoomDisplay(props : RoomDisplayprops) {
   return (
     <div className='roomdisplay'>
-      <p>B112</p>
+      <p>{props.name}</p>
     </div>
   );
 }

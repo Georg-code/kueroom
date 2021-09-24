@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./button.scss";
 
-function Button() {
+export interface Buttonprops {
+  OnClick: any;
+}
+
+function Button(props: Buttonprops) {
+  const [buttonText, setButtonText] = useState("Search free room");
+  function search() {
+    setButtonText("loading...");
+    setTimeout(function () {
+      setButtonText("Search free room");
+      props.OnClick();
+    }, Math.random() * 1200);
+  }
+
   return (
-    <div className='button'>
-      <p>Search free room</p>
+    <div className='button' onClick={search}>
+      <p>{buttonText}</p>
     </div>
   );
 }

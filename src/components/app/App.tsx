@@ -4,36 +4,28 @@ import "./app.scss";
 import HeroImg from "../../assets/lost.svg";
 
 import monday from "../../assets/dates/1.json";
-import { strict } from "assert";
-import { Key } from "react";
-import { stringify } from "querystring";
 
 function App() {
-  function time(type: string) {
-    let classStart: keyof typeof monday;
+  function time() {
+    type Rooms = keyof typeof monday;
+    let classStart: Rooms;
     const now = new Date();
-    console.log(now.getHours());
     for (let i = Object.keys(monday).length - 1; i > 0; i--) {
       let time: any = Object.keys(monday)[i].split(":");
       // eslint-disable-next-line eqeqeq
       if (time[0] == now.getHours()) {
         if (time[1] <= now.getMinutes()) {
-          console.log(Object);
-          classStart = Object.keys(monday)[i];
-         
-          console.log();
+          classStart = Object.keys(monday)[i] as Rooms;
+          console.log(Object.keys(monday)[i]);
         } else {
-          //classStart = Object.keys(monday)[i - 1];
+          classStart = Object.keys(monday)[i - 1] as Rooms;
           console.log(Object.keys(monday)[i - 1]);
-          classStart = Object.keys(monday)[i - 1];
         }
-        console.log(classStart);
         console.log(monday[classStart]);
       }
     }
   }
-
-  time("");
+  time();
 
   return (
     <div className='app'>

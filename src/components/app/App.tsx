@@ -25,7 +25,7 @@ function App() {
       let time = timeHHMM.split(":").map((x) => parseInt(x));
 
       let timeInterval: number | undefined;
-      if (time[0] == now.getHours()) {
+      if (time[0] === now.getHours()) {
         if (time[1] <= now.getMinutes()) {
           timeInterval = i;
         } else {

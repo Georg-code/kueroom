@@ -2,7 +2,7 @@ import Button from "../button/button";
 import RoomDisplay from "../room-display/room-display";
 import "./app.scss";
 import HeroImg from "../../assets/lost.svg";
-
+//
 import dayInput from "../../assets/dates/1.json";
 import { useState } from "react";
 

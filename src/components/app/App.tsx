@@ -29,35 +29,17 @@ function App() {
       return {};
     }
   }
-  // rework that shit
-  // TODO #1 fix the 22:30 on 23:10 bug
   function time() {
-    const day = getData();
+    const data = getData() as Record<string, string[]>;
 
-    let now = new Date();
-
-    function HHMMtoInt(x: string) {
-      const [HH, MM] = x.split(":");
-      return parseInt(HH) * 100 + parseInt(MM);
-    }
-    const times = Object.keys(day).sort((a, b) => HHMMtoInt(a) - HHMMtoInt(b));
-
-    for (let i = 0; i < times.length; i++) {
-      const timeHHMM = times[i];
-      let time = timeHHMM.split(":").map((x) => parseInt(x));
-
-      let timeInterval: number | undefined;
-      if (time[0] === now.getHours()) {
-        if (time[1] <= now.getMinutes()) {
-          timeInterval = i;
-        } else {
-          timeInterval = i - 1;
-        }
-      }
-
-      if (timeInterval !== undefined && timeInterval >= 0) {
-        console.log(day[times[timeInterval]]);
-        return day[times[timeInterval]];
+    const now = new Date();
+    const now_inMin = now.getHours() * 60 + now.getMinutes();
+    for (let i = Object.keys(data).length - 1; i > 0; i--) {
+      let v_daymin: number =
+        parseInt(Object.keys(data)[i].split(":")[0]) * 60 +
+        parseInt(Object.keys(data)[i].split(":")[1]);
+      if (now_inMin - v_daymin < 46 && now_inMin - v_daymin > 0) {
+        return data[Object.keys(data)[i]];
       }
     }
   }

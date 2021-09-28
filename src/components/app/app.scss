@@ -6,6 +6,10 @@
   &__flex {
     display: flex;
   }
+
+  &__wide {
+    width: 75vw !important;
+  }
   &__input-container::before {
     background-image: url("../../assets/dots.svg");
     background-position: right;
@@ -36,7 +40,7 @@
 
   &__input-container {
     text-align: center;
-    width: 25vw;
+    width: 50%;
     height: 350px;
     background-color: white;
     border-radius: 8px;

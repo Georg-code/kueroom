@@ -41,6 +41,8 @@ function App() {
         parseInt(Object.keys(data)[i].split(":")[1]);
       if (now_inMin - v_daymin <= 45 && now_inMin - v_daymin > 0) {
         return data[Object.keys(data)[i]];
+      } else if (now_inMin - v_daymin <= 60 && now_inMin - v_daymin > 0) {
+        return data[Object.keys(data)[i]];
       }
     }
   }

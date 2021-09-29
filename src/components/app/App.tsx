@@ -34,17 +34,19 @@ function App() {
 
     const now = new Date();
     const now_inMin = now.getHours() * 60 + now.getMinutes();
-    for (let i = Object.keys(data).length - 1; i > 0; i--) {
+    for (let i = Object.keys(data).length - 1; i >= 0; i--) {
+      console.log(Object.keys(data)[i]);
       let v_daymin: number =
         parseInt(Object.keys(data)[i].split(":")[0]) * 60 +
         parseInt(Object.keys(data)[i].split(":")[1]);
-      if (now_inMin - v_daymin < 46 && now_inMin - v_daymin > 0) {
+      if (now_inMin - v_daymin <= 45 && now_inMin - v_daymin > 0) {
         return data[Object.keys(data)[i]];
       }
     }
   }
 
   function lol() {
+    console.log(time() as string[]);
     if (time() !== undefined) {
       setRooms(time() as string[]);
     } else {

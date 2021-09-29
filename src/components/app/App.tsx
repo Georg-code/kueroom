@@ -64,7 +64,9 @@ function App() {
               : "app__input-container"
           }
         >
-          <h1>Find a Room</h1>
+          <h1>
+            Find a Room<sup>BETA</sup>
+          </h1>
           <div className='app__roomdisplay'>
             {rooms.map((room) => (
               <RoomDisplay name={room} />

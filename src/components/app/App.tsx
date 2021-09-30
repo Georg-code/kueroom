@@ -92,7 +92,7 @@ function App() {
         </div>
       </div>
       <p className='app__footer'>
-        Made with ❤️ by <a href='https://github.com/Georg-code'>Georg</a>
+        Made with ❤️ by Georg
       </p>
     </div>
   );

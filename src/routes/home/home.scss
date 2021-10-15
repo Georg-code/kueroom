@@ -1,3 +1,4 @@
+@import "../../shared/index.scss";
 .home {
   position: relative;
   width: 100vw;
@@ -5,6 +6,23 @@
 
   &__content {
     position: relative;
+  }
+
+  &__hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    h1 {
+      font-size: 3.8rem;
+      width: 50vw;
+      text-align: center;
+      font-family: $font;
+    }
   }
 }
 

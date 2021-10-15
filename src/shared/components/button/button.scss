@@ -1,0 +1,17 @@
+@import "../../index.scss";
+
+.button {
+  &__button {
+    background-color: $blue;
+    border: none;
+    color: white;
+    padding: 10px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: $font;
+    font-weight: 500;
+  }
+}

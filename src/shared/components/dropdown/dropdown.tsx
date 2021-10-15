@@ -4,7 +4,7 @@ function Dropdown() {
   return (
     <div className='dropdown'>
       <select>
-        <option>Zeit Wählen</option>
+        <option>Zeit Wählen </option>
       </select>
     </div>
   );

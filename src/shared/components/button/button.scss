@@ -16,4 +16,8 @@
     font-family: $font;
     font-weight: 500;
   }
+
+  &__button:hover {
+    background-color: $blue-hover;
+  }
 }

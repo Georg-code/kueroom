@@ -9,8 +9,27 @@
     margin-top: 15vh;
     background-color: $white;
     width: 60%;
-    height: 90px;
+    height: 70px;
     box-shadow: 5px 5px 15px 5px #00000034;
     border-radius: 5px;
+    display: flex;
+    max-width: 800px;
+    padding-left: 3vw;
+  }
+
+  &__content-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+
+  &__content-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3vw;
+    width: 50%;
   }
 }

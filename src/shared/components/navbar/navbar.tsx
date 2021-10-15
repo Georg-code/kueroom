@@ -1,6 +1,5 @@
 import React from "react";
 import "./navbar.scss";
-import Button from "../button/button";
 
 function Navbar() {
   return (

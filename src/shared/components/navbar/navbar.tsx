@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.scss";
+import Button from "../button/button";
 
 function Navbar() {
   return (
@@ -15,7 +16,7 @@ function Navbar() {
         <a href='/support'>Support</a>
       </div>
       <div className='navbar__right'>
-        <p>Github</p>
+        <a href='/github'>Github</a>
       </div>
     </div>
   );

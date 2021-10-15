@@ -2,6 +2,8 @@
 
 .button {
   &__button {
+    display: inline-block;
+
     background-color: $blue;
     border: none;
     color: white;

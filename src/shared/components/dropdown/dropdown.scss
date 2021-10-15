@@ -1,0 +1,22 @@
+@import "../../index.scss";
+.dropdown {
+  select {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    font-size: 15px;
+    width: 150px;
+    appearance: none;
+    font-family: $font;
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  select::before {
+    content: "\f107";
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+}

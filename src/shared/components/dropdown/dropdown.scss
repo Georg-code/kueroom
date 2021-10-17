@@ -1,28 +1,36 @@
 @import "../../index.scss";
 .dropdown {
-  margin-right: 2vw;
-  select {
-    border: none;
+  position: relative;
+  display: inline-block;
+
+  &__button {
     background-color: transparent;
-    border-bottom: 2px solid black;
-    font-size: 15px;
-    width: 150px;
-    appearance: none;
+    border: none;
+    border-bottom: black solid 2px;
     font-family: $font;
     font-weight: 600;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 20px;
+    width: 150px;
+    text-align: left;
     background-image: url('data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>');
     background-repeat: no-repeat;
     background-position-y: 60%;
     background-position-x: 98%;
     background-size: 12px;
+    margin-right: 20px;
   }
 
-  select::before {
-    content: "\f107";
-    font-size: 20px;
+  &__button:hover &__content {
+    display: block;
+  }
+
+  &__content {
+    display: none;
     position: absolute;
-    right: 15px;
-    top: 10px;
+    background-color: $white;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
   }
 }

@@ -3,12 +3,15 @@ import "./dropdown.scss";
 
 interface DropdownProps {
   label: string;
+  options: any; // CHANGE
+  selectedOption?: void | undefined;
 }
 
 function Dropdown(props: DropdownProps) {
   const [dropdownStatus, dropdownSet] = useState("none");
 
   const toggleDropdown = () =>
+    // ONLY ENABLE ON SMALL DEVICES
     dropdownStatus === "block" ? dropdownSet("none") : dropdownSet("block");
 
   return (
@@ -27,7 +30,18 @@ function Dropdown(props: DropdownProps) {
         onMouseOver={() => dropdownSet("block")}
         onMouseOut={() => dropdownSet("none")}
       >
-        <p onClick={() => dropdownSet("none")}>Link 1</p>
+        {Object.keys(props.options).map((optionKey: string) => {
+          return (
+            <p
+              onClick={() => {
+                dropdownSet("none");
+                alert("Test");
+              }}
+            >
+              {props.options[optionKey as unknown as keyof typeof props.options]}
+            </p>
+          );
+        })}
       </div>
     </div>
   );

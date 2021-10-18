@@ -1,0 +1,33 @@
+@import "../../index.scss";
+
+.navbar {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: $font;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 3vw 10vw;
+  line-height: 20px;
+
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $black;
+  }
+
+  &__middle,
+  &__right {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__dot {
+    padding: 0 15px;
+  }
+}
+
+// ¯\_(ツ)_/¯

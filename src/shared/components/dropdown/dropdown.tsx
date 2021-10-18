@@ -4,7 +4,7 @@ import "./dropdown.scss";
 interface DropdownProps {
   label: string;
   options: any; // CHANGE
-  selectedOption?: void | undefined;
+  onSelect: any;
 }
 
 function Dropdown(props: DropdownProps) {
@@ -35,10 +35,18 @@ function Dropdown(props: DropdownProps) {
             <p
               onClick={() => {
                 dropdownSet("none");
-                alert("Test");
+                props.onSelect(
+                  props.options[
+                    optionKey as unknown as keyof typeof props.options
+                  ]
+                );
               }}
             >
-              {props.options[optionKey as unknown as keyof typeof props.options]}
+              {
+                props.options[
+                  optionKey as unknown as keyof typeof props.options
+                ]
+              }
             </p>
           );
         })}

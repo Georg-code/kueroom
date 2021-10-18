@@ -2,9 +2,7 @@
      "SelectHouse": {
           "0": "Haus A & B",
           "1": "Schulhaus A",
-          "2": "Schulhaus B",
-          "3": "Schul Zimmer",
-          "4": "Fach Zimmer"
+          "2": "Schulhaus B"
      },
 
      "SelectDay": {

@@ -3,10 +3,16 @@ import "./timeSelect.scss";
 import Dropdown from "../dropdown/dropdown";
 import Button from "../button/button";
 import Settings from "../../../assets/config/settings.json";
-function TimeSelect() {
+
+const TimeSelect = () => {
   const [house, setHouse] = useState("Haus A & B");
   const [day, setDay] = useState("Montag");
   const [time, setTime] = useState("8:15 - 9:00");
+
+  const search = () => {
+    console.log("Button clicked - Add API CALL in the future")
+  };
+
   return (
     <div className='timeSelect'>
       <div className='timeSelect__container'>
@@ -28,11 +34,11 @@ function TimeSelect() {
           />
         </div>
         <div className='timeSelect__content-button'>
-          <Button label='search' />
+          <Button label='search' onClick={() => search()} />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default TimeSelect;

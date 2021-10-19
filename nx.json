@@ -30,15 +30,18 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
-      "tags": []
-    },
     "kueroom": {
       "tags": []
     },
     "kueroom-e2e": {
       "tags": [],
       "implicitDependencies": ["kueroom"]
+    },
+    "routes": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
